@@ -42,6 +42,10 @@
         label { display: block; margin-top: 12px; font-weight: bold; }
         input, select, textarea { width: 100%; max-width: 400px; padding: 6px; margin-top: 4px; box-sizing: border-box; }
         .error { color: #b91c1c; font-size: 14px; margin-top: 4px; }
+
+        .check-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.check-row input { width: auto; margin-top: 0; }
+.check-row label { display: inline; margin-top: 0; font-weight: normal; }
     </style>
 </head>
 <body>
