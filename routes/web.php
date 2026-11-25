@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,6 @@ Route::middleware(['auth'])->group(function () {
 
     // Khusus admin: kategori, produk, laporan (ditambahkan di langkah berikutnya)
     Route::middleware(['admin'])->group(function () {
-        //
+        Route::resource('categories', CategoryController::class)->except(['show']);
     });
 });
