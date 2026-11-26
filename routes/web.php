@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
@@ -14,6 +15,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('dashboard');
+    Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
+    Route::post('/pos', [PosController::class, 'store'])->name('pos.store');
     })->name('dashboard');
 
     // Khusus admin: kategori, produk, laporan (ditambahkan di langkah berikutnya)
